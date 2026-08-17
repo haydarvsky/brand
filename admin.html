@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحةُ تحكّم معرضِ الهويات</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A3428">
+<link rel="icon" href="img/logo-cream.svg">
+<link rel="stylesheet" href="css/admin.css">
+<style>
+  .tilePrev{aspect-ratio:16/10;border-radius:16px;display:grid;place-items:center;overflow:hidden;background:#0F4C3A;border:1px solid var(--line)}
+  .tilePrev img{width:62%;max-height:62%;object-fit:contain}
+  .tilePrev img.cover{width:100%;height:100%;max-height:none;object-fit:cover}
+  .tilePrev .word{font-family:'Sakkal Saad Poster','Sakkal Saad',serif;font-weight:700;font-size:34px;color:#fff;opacity:.94;text-align:center;padding:0 16px}
+  .cols{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .colchip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:100px;padding:3px 6px 3px 12px;background:#fff}
+  .colchip input[type=color]{width:30px;height:30px;border:none;background:none;padding:0;cursor:pointer;border-radius:50%}
+  .colchip code{font-size:14.5px;color:rgba(42,26,15,.6);direction:ltr}
+  .colchip button{cursor:pointer;border:none;background:none;color:var(--red);font-size:17px;line-height:1;padding:0 2px}
+  .bgrow{display:flex;align-items:center;gap:10px}
+  .bgrow input[type=color]{width:46px;height:46px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;padding:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img class="mark" src="img/logo-cream.svg" alt="شعار حيدر">
+    <h1>لوحةُ تحكّم معرضِ الهويات <span id="mock" class="mockbadge" hidden>وضعُ تجربة</span></h1>
+    <span class="who" id="who"></span>
+    <span class="dirty" id="dirty" hidden>تغييراتٌ لم تُنشَر</span>
+    <a class="btn btn-ghost" href="index.html" target="_blank" rel="noopener">
+      عرضُ المعرض
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg>
+    </a>
+    <button class="btn btn-gold" id="save" disabled>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>
+      حفظٌ ونشر
+    </button>
+  </div>
+</header>
+
+<section class="gate" id="gate" hidden>
+  <h2>رمزُ الوصول إلى جِتهَب</h2>
+  <p>تحتاجُ اللوحةُ رمزاً يسمحُ بالكتابةِ في مستودع <code>haydarvsky/brand</code>. يُحفظُ في متصفّحِك وحده.</p>
+  <ol>
+    <li>افتحْ <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">إنشاءَ رمزٍ دقيق</a>.</li>
+    <li><b>Repository access</b> → <code>Only select repositories</code> → <code>brand</code>.</li>
+    <li><b>Permissions → Repository</b> → <code>Contents</code> = <code>Read and write</code>.</li>
+  </ol>
+  <div class="form">
+    <div class="f full">
+      <label for="token">الرمز</label>
+      <input id="token" type="text" placeholder="github_pat_… أو ghp_…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="rowbtns">
+      <button class="btn btn-gold" id="tokenSave">تحقّقْ واحفظْ</button>
+      <button class="btn btn-line" id="tryMock">جرّبِ اللوحةَ بلا رمز</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="app" hidden>
+  <div class="grid">
+
+    <section class="panel">
+      <h2>الهوياتُ المعروضة</h2>
+      <p class="hint">اسحبْ لترتيبِ الظهور، وانقرْ هويةً لتعديلِها. المميّزةُ تُعرَضُ ببطاقةٍ عريضة.</p>
+      <div class="rows" id="rows"></div>
+      <div class="rowbtns">
+        <button class="btn btn-line" id="newBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          هويةٌ جديدة
+        </button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 id="edTitle">هويةٌ جديدة</h2>
+      <p class="hint">ارفعِ الشعارَ (SVG أفضل) واختر لونَ اللوحِ خلفَه، ثمّ املأِ البيانات.</p>
+
+      <div class="form" id="form">
+
+        <div class="drop" id="drop">
+          <b>أفلتْ ملفَّ الشعار هنا</b>
+          أو انقرْ للاختيار — SVG أو PNG بخلفيةٍ شفّافة
+          <div class="fname" id="fname" hidden></div>
+          <input type="file" id="file" accept=".svg,image/svg+xml,image/*" hidden>
+        </div>
+
+        <div class="f">
+          <label for="name">اسمُ العلامة</label>
+          <input id="name" type="text" placeholder="سوروبان">
+        </div>
+
+        <div class="f">
+          <label for="id">المعرّف <span class="sm">(بالإنجليزية)</span></label>
+          <input id="id" type="text" placeholder="soroban" spellcheck="false">
+        </div>
+
+        <div class="f">
+          <label for="sector">القطاع</label>
+          <input id="sector" type="text" placeholder="اقتصاد" list="sectors">
+          <datalist id="sectors"></datalist>
+        </div>
+
+        <div class="f">
+          <label for="year">السنة</label>
+          <input id="year" type="number" min="1990" max="2200" step="1" placeholder="٢٠٢٦">
+        </div>
+
+        <div class="f full">
+          <label for="tagline">السطرُ التعريفي</label>
+          <input id="tagline" type="text" placeholder="الاستشاراتُ الاقتصاديةُ والماليّة">
+        </div>
+
+        <div class="f full">
+          <label for="about">الوصف</label>
+          <textarea id="about" placeholder="ما بُنيَ في الهويةِ وفكرتُها…"></textarea>
+        </div>
+
+        <div class="f full">
+          <label>لوحةُ الألوان <span class="sm">(انقرْ مربّعاً لتغييرِه)</span></label>
+          <div class="cols" id="cols"></div>
+          <div class="rowbtns" style="margin-top:8px">
+            <button class="btn btn-line" type="button" id="addCol">+ لون</button>
+            <button class="btn btn-line" type="button" id="fromLogo" hidden>استخرجْ من الشعار</button>
+          </div>
+        </div>
+
+        <div class="f">
+          <label for="bg">لونُ اللوحِ خلفَ الشعار</label>
+          <div class="bgrow">
+            <input id="bg" type="color" value="#0F4C3A">
+            <input id="bgHex" type="text" spellcheck="false" style="flex:1;direction:ltr">
+          </div>
+        </div>
+
+        <div class="f">
+          <label for="logoFit">عرضُ الشعار</label>
+          <select id="logoFit">
+            <option value="contain">داخلَ اللوح (شعارٌ شفّاف)</option>
+            <option value="cover">يملأُ اللوح (صورةٌ كاملة)</option>
+          </select>
+        </div>
+
+        <div class="f">
+          <label for="fonts">الخطوط <span class="sm">(بفواصل)</span></label>
+          <input id="fonts" type="text" placeholder="Sakkal Saad، Almarai">
+        </div>
+
+        <div class="f">
+          <label for="dels">ما سُلِّم <span class="sm">(بفواصل)</span></label>
+          <input id="dels" type="text" placeholder="الشعار، النظام اللوني، قوالب التواصل">
+        </div>
+
+        <div class="f full">
+          <label for="link">رابطُ لوحةِ الهوية <span class="sm">(اختياري — صفحةٌ في المستودع أو رابطٌ خارجي)</span></label>
+          <input id="link" type="text" placeholder="Soroban.html" spellcheck="false" list="pages">
+          <datalist id="pages"></datalist>
+        </div>
+
+        <div class="checks">
+          <label><input type="checkbox" id="featured"> بطاقةٌ عريضة <span class="sm">(للعملِ الأبرز)</span></label>
+          <label><input type="checkbox" id="hidden"> مخفيّة</label>
+        </div>
+
+        <div class="rowbtns">
+          <button class="btn btn-gold" type="button" id="apply">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>
+            أثبِتِ التعديل
+          </button>
+          <button class="btn btn-line" type="button" id="cancel">إلغاء</button>
+          <button class="btn btn-red" type="button" id="del" hidden>احذفْ</button>
+        </div>
+      </div>
+
+      <div class="prev">
+        <h3>معاينةُ البطاقة</h3>
+        <div class="tilePrev" id="tilePrev"></div>
+        <div class="pcard" id="pcard" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<div class="status" id="status"></div>
+
+<script src="js/gh-api.js"></script>
+<script src="js/imgtools.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
