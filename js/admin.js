@@ -32,7 +32,7 @@
   /* ---------- الإقلاع ---------- */
   function boot() {
     if (MOCK) return startMock();
-    var t = localStorage.getItem(TOKEN_KEY);
+    var t = (localStorage.getItem(TOKEN_KEY) || localStorage.getItem('hv_token'));
     if (!t) { el.gate.hidden = false; return; }
     connect(t);
   }
