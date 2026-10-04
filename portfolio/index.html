@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طبقات — بروتفوليو الهويات | حيدر المعاتيق</title>
+<meta name="description" content="عشرُ سنواتٍ من الهويّاتِ البصرية، من ٢٠١٧ إلى ٢٠٢٦، طبقةً فوقَ طبقة — أعمالُ حيدر المعاتيق.">
+<meta name="theme-color" content="#F4EDE2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="طبقات — عشرُ سنواتٍ من الهويّاتِ البصرية">
+<meta property="og:description" content="من ٢٠١٧ إلى ٢٠٢٦: أيمن، ستوديو القرين، أفق المستقبل، سوروبان، وأرشيفٌ من العلامات.">
+<meta property="og:url" content="https://haydarvsky.github.io/brand/portfolio/">
+<meta property="og:image" content="https://haydarvsky.github.io/brand/portfolio/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/logo-dark.svg">
+<link rel="preload" href="../fonts/poster-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/sakkal-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Sakkal Saad';src:url('../fonts/sakkal-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Sakkal Saad';src:url('../fonts/sakkal-700.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Poster';src:url('../fonts/poster-700.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Poster';src:url('../fonts/poster-900.woff2') format('woff2');font-weight:900;font-display:swap}
+:root{
+  --paper:#F4EDE2;--ink:#1E1712;--clay:#C4532D;--clay-lt:#EE9566;
+  --e-out:cubic-bezier(.22,.61,.36,1);--e-soft:cubic-bezier(.16,.84,.44,1);
+  --maxw:1240px;--gut:clamp(16px,4vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Sakkal Saad',system-ui,sans-serif;font-size:19px;line-height:1.85;
+  -webkit-font-smoothing:antialiased;font-synthesis:none;overflow-x:clip}
+h1,h2,h3,h4{font-family:'Poster','Sakkal Saad',serif;margin:0;line-height:1.2;font-weight:900}
+img,video,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.ltr{direction:ltr;unicode-bidi:isolate}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:4px}
+
+/* ============ البطل ============ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:40px 0 60px;
+  background:
+   radial-gradient(1200px 600px at 85% -10%, #FBF6EE 0%, transparent 60%),
+   var(--paper)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;width:100%}
+.hero-top{position:absolute;top:24px;inset-inline:0}
+.hero-top .wrap{display:flex;justify-content:space-between;align-items:center}
+.hero-top img{height:58px;width:auto}
+.hero-top .hand{font-size:15px;color:#6F6152}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--clay);font-weight:700;letter-spacing:0}
+.kicker::before{content:"";width:28px;height:2px;background:currentColor}
+.hero h1{font-size:clamp(84px,14vw,196px);line-height:.95;margin:14px 0 6px;color:var(--ink)}
+.hero h1 span{display:inline-block}
+.hero .lead{font-size:clamp(20px,2.2vw,26px);line-height:1.7;max-width:30ch;color:#3E3329;margin:18px 0 28px}
+.stats{display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap;margin:0 0 30px;padding:0;list-style:none}
+.stats li{display:flex;flex-direction:column}
+.stats b{font-family:'Poster';font-size:clamp(40px,5vw,58px);line-height:1;color:var(--ink)}
+.stats small{font-size:15px;color:#7A6B5C}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);padding:12px 22px 12px 18px;border-radius:999px;font-weight:700;font-size:17px;
+  transition:transform .26s var(--e-out),background .26s}
+.cta:hover{transform:translateY(-2px);background:var(--clay)}
+.cta svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* المقطع الجيولوجي */
+.strata{position:relative;width:100%;aspect-ratio:1/1.08;max-height:78svh;margin-inline:auto}
+.strata svg{width:100%;height:100%;overflow:visible}
+.strata .band{opacity:0;transform:translateY(-14px);transition:opacity .7s var(--e-soft),transform .9s var(--e-soft)}
+.strata.on .band{opacity:1;transform:none}
+.strata .yr{font-family:'Poster';font-size:26px;font-weight:700}
+.strata .pebble{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:transform .3s var(--e-out)}
+.strata .pebble:hover,.strata .pebble:focus{transform:scale(1.35)}
+.strata .pebble circle{stroke:rgba(255,255,255,.55);stroke-width:2}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font-size:15px;padding:4px 12px;border-radius:999px;white-space:nowrap;
+  transform:translate(50%,-130%);opacity:0;transition:opacity .18s}
+.tip.on{opacity:1}
+.surface-note{position:absolute;top:-6px;inset-inline-start:8%;font-size:14px;color:#7A6B5C;display:flex;gap:6px;align-items:center}
+.surface-note::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 6px rgba(196,83,45,.16);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(196,83,45,0)}}
+.scroll-hint{position:absolute;bottom:22px;inset-inline:0;display:flex;justify-content:center;font-size:14px;color:#7A6B5C;gap:8px;align-items:center}
+.scroll-hint i{width:1px;height:34px;background:linear-gradient(var(--clay),transparent);animation:drip 2s infinite var(--e-soft);transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* ============ مقياس العمق ============ */
+.gauge{position:fixed;left:16px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:2px;
+  padding:12px 10px;border-radius:18px;background:rgba(30,23,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:#EFE5D6;opacity:0;pointer-events:none;transition:opacity .4s}
+.gauge.show{opacity:1;pointer-events:auto}
+.gauge .lbl{font-size:11px;color:#B9A892;text-align:center;margin-bottom:4px}
+.gauge a{display:flex;align-items:center;gap:8px;font-size:14px;padding:2px 4px;border-radius:8px;color:#A8977F;transition:color .2s}
+.gauge a i{width:10px;height:2px;background:currentColor;transition:width .3s var(--e-out)}
+.gauge a.on{color:#fff;font-weight:700}
+.gauge a.on i{width:22px;background:var(--clay-lt)}
+.gauge a:hover{color:#fff}
+
+/* ============ الطبقات ============ */
+.layer{position:relative;background:var(--bg);color:var(--fg);padding:clamp(70px,9vw,120px) 0 clamp(60px,8vw,110px)}
+.layer .edge{position:absolute;top:0;left:0;width:100%;height:60px;transform:translateY(-99%);pointer-events:none}
+.layer .edge path{fill:var(--bg)}
+.layer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:var(--grain,.35);mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cg fill='%23000' fill-opacity='.06'%3E%3Ccircle cx='12' cy='20' r='1.2'/%3E%3Ccircle cx='70' cy='8' r='.9'/%3E%3Ccircle cx='110' cy='44' r='1.4'/%3E%3Ccircle cx='40' cy='76' r='1'/%3E%3Ccircle cx='96' cy='104' r='1.1'/%3E%3Ccircle cx='18' cy='122' r='.8'/%3E%3Ccircle cx='128' cy='130' r='1'/%3E%3C/g%3E%3C/svg%3E")}
+.layer.dark::after{mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cg fill='%23fff' fill-opacity='.05'%3E%3Ccircle cx='12' cy='20' r='1.2'/%3E%3Ccircle cx='70' cy='8' r='.9'/%3E%3Ccircle cx='110' cy='44' r='1.4'/%3E%3Ccircle cx='40' cy='76' r='1'/%3E%3Ccircle cx='96' cy='104' r='1.1'/%3E%3Ccircle cx='18' cy='122' r='.8'/%3E%3Ccircle cx='128' cy='130' r='1'/%3E%3C/g%3E%3C/svg%3E")}
+.layer>.wrap{position:relative;z-index:1}
+.lhead{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,40px);align-items:end;margin-bottom:clamp(30px,5vw,56px)}
+.year{font-family:'Poster';font-weight:900;font-size:clamp(96px,16vw,230px);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--fg);opacity:.9;
+  background:linear-gradient(var(--fg),var(--fg)) no-repeat;background-size:100% 0;background-position:bottom;-webkit-background-clip:text;background-clip:text;
+  transition:background-size 1.2s var(--e-soft)}
+.layer.in .year{background-size:100% 100%}
+.lmeta{padding-bottom:12px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.lmeta .depth{font-size:14px;color:var(--mut)}
+.lmeta p{margin:0;font-size:clamp(20px,2.2vw,26px);line-height:1.5;font-family:'Poster';font-weight:700}
+.lmeta .names{font-size:15px;color:var(--mut)}
+
+/* فصول ٢٠٢٦ */
+.chapter{margin-bottom:clamp(60px,9vw,120px)}
+.chapter:last-child{margin-bottom:0}
+.ch-head{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(18px,4vw,56px);align-items:end;margin-bottom:22px}
+.ch-num{font-size:14px;color:var(--mut);display:flex;gap:10px;align-items:center}
+.ch-num::after{content:"";flex:0 0 40px;height:1px;background:currentColor;opacity:.5}
+.ch-head h3{font-size:clamp(48px,7vw,96px);line-height:1;margin:8px 0 4px}
+.ch-head .en{font-size:15px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+.ch-head .about{margin:0;font-size:18.5px;line-height:1.9;color:var(--fg2)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.tag{font-size:14px;padding:3px 12px;border-radius:999px;border:1px solid var(--line)}
+.sw{display:flex;gap:0;border-radius:999px;overflow:hidden;height:24px;border:1px solid var(--line)}
+.sw button{width:30px;height:100%;position:relative}
+.sw button:hover::after{content:attr(data-hex);position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#111;color:#fff;font-size:12px;padding:2px 8px;border-radius:6px;direction:ltr;white-space:nowrap}
+.link-btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--acc);border-bottom:1px solid currentColor;padding-bottom:1px}
+.link-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2}
+
+.mosaic{columns:3;column-gap:12px}
+.mosaic .tile{break-inside:avoid;margin-bottom:12px;width:100%}
+.lead-t{margin-bottom:12px}
+.tile{position:relative;overflow:hidden;border-radius:14px;background:var(--tile);cursor:zoom-in;
+  opacity:0;transform:translateY(26px) scale(.985);transition:opacity .8s var(--e-soft),transform 1s var(--e-soft);transition-delay:calc(var(--i)*70ms)}
+.chapter.in .tile{opacity:1;transform:none}
+.tile{display:block;width:100%}
+.tile.hero-t{aspect-ratio:16/9}
+.tile img,.tile video{width:100%;height:auto;transition:transform 1.2s var(--e-soft)}
+.tile.hero-t img,.tile.hero-t video{height:100%;object-fit:cover}
+.tile:hover img,.tile:hover video{transform:scale(1.045)}
+.tile .play{position:absolute;bottom:12px;inset-inline-start:12px;background:rgba(0,0,0,.55);color:#fff;font-size:13px;padding:2px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+
+/* الأرشيف */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.4vw,28px)}
+.card{position:relative;display:flex;flex-direction:column;text-align:start;border-radius:18px;overflow:hidden;background:var(--card);
+  border:1px solid var(--line);opacity:0;transform:translateY(30px);transition:opacity .8s var(--e-soft),transform 1s var(--e-soft),box-shadow .3s;transition-delay:calc(var(--i)*90ms)}
+.layer.in .card{opacity:1;transform:none}
+.card:hover{box-shadow:0 22px 50px -26px rgba(0,0,0,.55)}
+.card.full{grid-column:1/-1}
+.card .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:#ddd}
+.card.full .ph{aspect-ratio:auto;height:clamp(260px,34vw,440px);display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px;background:var(--tile)}
+.card.full .ph img{position:static;opacity:1!important}
+.card.full .ph img:first-child{grid-row:1/3}
+.card.full:hover .ph img{transform:none}
+.card.full .ph img:hover{transform:scale(1.03)}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .7s,transform 1.4s var(--e-soft)}
+.card .ph img+img{opacity:0}
+.card:hover .ph img+img{opacity:1}
+.card:hover .ph img{transform:scale(1.04)}
+.card .cnt{position:absolute;top:12px;inset-inline-end:12px;background:rgba(0,0,0,.55);color:#fff;font-size:13px;padding:1px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.card .info{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:16px 18px 18px;align-items:center}
+.card h4{font-size:clamp(24px,2.4vw,30px)}
+.card .en{grid-column:1;font-size:13px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+.card .sec{grid-column:1/-1;font-size:16px;color:var(--fg2);line-height:1.6}
+.card .sw{grid-row:1;grid-column:2;height:18px}
+.card .sw span{width:20px;height:100%}
+.card .studio{font-size:12.5px;color:var(--mut);grid-column:2;grid-row:2;justify-self:end}
+
+/* الختام */
+.closing{background:#120E0B;color:#EFE5D6;padding:clamp(80px,10vw,140px) 0 50px;position:relative;text-align:center;overflow:hidden}
+.closing .edge path{fill:#120E0B}
+.closing .core{width:min(340px,70vw);margin:0 auto 30px;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 45%, #C4532D 0%, #7A2C17 38%, #2A130B 64%, transparent 66%);
+  display:grid;place-items:center;filter:saturate(1.1);animation:glow 5s ease-in-out infinite}
+@keyframes glow{50%{transform:scale(1.03);filter:saturate(1.3) brightness(1.08)}}
+.closing .core img{width:34%;opacity:.95}
+.closing h2{font-size:clamp(44px,7vw,92px);margin-bottom:10px}
+.closing p{max-width:40ch;margin:0 auto 28px;color:#BFAF98;font-size:20px}
+.closing .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.closing .cta{background:#EFE5D6;color:#120E0B}
+.closing .cta.ghost{background:transparent;color:#EFE5D6;border:1px solid rgba(239,229,214,.35)}
+.closing .cta:hover{background:var(--clay);color:#fff}
+.foot{margin-top:70px;padding-top:24px;border-top:1px solid rgba(239,229,214,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px;color:#8F7F6A}
+
+/* العارض */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(14,11,9,.97);backdrop-filter:blur(8px);display:grid;grid-template-rows:auto minmax(0,1fr) auto;color:#EFE5D6;
+  opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.lb.open{opacity:1;visibility:visible}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:14px var(--gut);gap:12px}
+.lb-top h5{margin:0;font-family:'Poster';font-size:24px;font-weight:700}
+.lb-top small{color:#A8977F;font-size:14px;margin-inline-start:10px}
+.lb-x{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08)}
+.lb-x svg,.lb-nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.lb-stage{position:relative;display:grid;place-items:center;min-height:0;padding:0 var(--gut)}
+.lb-stage img,.lb-stage video{max-width:100%;max-height:calc(100svh - 170px);object-fit:contain;border-radius:8px;transition:opacity .25s}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.lb-nav:hover{background:var(--clay)}
+.lb-prev{right:calc(var(--gut) / 2)}
+.lb-next{left:calc(var(--gut) / 2)}
+.lb-thumbs{display:flex;gap:8px;padding:12px var(--gut) 18px;overflow-x:auto;justify-content:center}
+.lb-thumbs button{flex:0 0 auto;width:64px;height:46px;border-radius:6px;overflow:hidden;opacity:.45;outline-offset:2px;transition:opacity .2s}
+.lb-thumbs button.on{opacity:1;outline:2px solid var(--clay-lt)}
+.lb-thumbs img{width:100%;height:100%;object-fit:cover}
+
+/* التجاوب */
+@media (max-width:900px){
+  .mosaic{columns:2}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero{min-height:auto;padding-top:110px}
+  .strata{max-width:520px;aspect-ratio:1/0.95}
+  .ch-head{grid-template-columns:1fr}
+  .gauge{left:auto;right:50%;top:auto;bottom:14px;transform:translateX(50%);flex-direction:row;gap:0;padding:6px 8px;border-radius:999px}
+  .gauge .lbl{display:none}
+  .gauge a{font-size:12.5px;padding:2px 5px}
+  .gauge a i{display:none}
+}
+@media (max-width:640px){
+  body{font-size:18px}
+  .mosaic{columns:2;column-gap:8px}
+  .mosaic .tile{margin-bottom:8px}
+  .tile.hero-t{aspect-ratio:4/3}
+  .card.full .ph{height:auto;aspect-ratio:4/3;grid-template-columns:1fr;grid-template-rows:1fr}
+  .card.full .ph img:not(:first-child){display:none}
+  .grid{grid-template-columns:1fr}
+  .lhead{grid-template-columns:1fr}
+  .year{font-size:30vw}
+  .lb-nav{display:none}
+  .hero-top img{height:46px}
+  .gauge a{font-size:11.5px;padding:2px 3px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .tile,.card,.strata .band{opacity:1!important;transform:none!important}
+  .year{background-size:100% 100%}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-top"><div class="wrap">
+    <a href="../" aria-label="معرض الهويات"><img src="../img/logo-dark.svg" alt="شعار حيدر"></a>
+    <span class="hand ltr">@haydar.almaateeq</span>
+  </div></div>
+  <div class="wrap">
+    <div>
+      <span class="kicker">بروتفوليو الهويّاتِ البصرية</span>
+      <h1>طبقات</h1>
+      <p class="lead">عشرُ سنواتٍ من العلامات، طبقةً فوقَ طبقة. ابدأ من السطح، من أحدثِ ما صنعتُ في ٢٠٢٦، ثم انزل نحو ٢٠١٧ حيث بدأ كلُّ شيء.</p>
+      <ul class="stats">
+        <li><b data-count="19">٠</b><small>هويّةً بصرية</small></li>
+        <li><b data-count="10">٠</b><small>سنوات</small></li>
+        <li><b data-count="__NI__">٠</b><small>تطبيقاً معروضاً</small></li>
+      </ul>
+      <a class="cta" href="#y2026">انزلْ إلى الطبقات
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+    </div>
+    <div class="strata" id="strata">
+      <span class="surface-note">السطح — ٢٠٢٦</span>
+      <svg id="strataSvg" viewBox="0 0 600 640" role="img" aria-label="مقطعٌ لطبقاتِ السنوات، وفي كلّ طبقةٍ هويّاتُها"></svg>
+      <span class="tip" id="tip"></span>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><i></i></div>
+</header>
+
+<nav class="gauge" id="gauge" aria-label="القفز إلى سنة"><span class="lbl">العمق</span></nav>
+
+<main id="layers"></main>
+
+<section class="closing">
+  <svg class="edge" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:60px;transform:translateY(-99%)"><path id="closeEdge"/></svg>
+  <div class="wrap">
+    <div class="core"><img src="../img/logo-cream.svg" alt="شعار حيدر"></div>
+    <h2>والطبقةُ التالية؟</h2>
+    <p>ربّما تكونُ علامتَك أنت. هويّةٌ تبدأ من فكرة، وتمتدُّ إلى كلِّ ما يلمسه جمهورك.</p>
+    <div class="row">
+      <a class="cta" href="https://instagram.com/haydar.almaateeq" target="_blank" rel="noopener">راسلني على إنستغرام
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+      <a class="cta ghost" href="../">معرضُ الهويّات</a>
+    </div>
+    <div class="foot">
+      <span>حيدر المعاتيق — أبو إيليا</span>
+      <span>أعمالُ ما قبل ٢٠٢٥ أُنجزت ضمن ستوديو القرين — الكويت</span>
+      <span>جميعُ الحقوق محفوظة — ٢٠٢٦</span>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <div class="lb-top">
+    <div><h5 id="lbTitle" style="display:inline"></h5><small id="lbCount"></small></div>
+    <button class="lb-x" id="lbX" aria-label="إغلاق"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lb-stage" id="lbStage">
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="السابقة"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="التالية"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+  </div>
+  <div class="lb-thumbs" id="lbThumbs"></div>
+</div>
+
+<script>
+const DATA=[{"id":"ayman","name":"أيمن","en":"AYMAN","year":2026,"sector":"منصّة محتوى كروي","about":"الكرةُ كما لم تُروَ من قبل. حرفُ A مرسومٌ بالهندسة تسكنُ فراغَه كرة، ونيونُ الكشّافاتِ على أخضرِ الملعب. دليلٌ من ثلاثين شريحة، وحزمةُ محتوى كاملة.","colors":["#0B3D20","#AEF24A","#0A0F0C","#E6DFCC","#D4A73A"],"imgs":[{"src":"img/ayman-00.webp","w":1600,"h":900},{"src":"img/ayman-01.webp","w":1600,"h":900},{"src":"img/ayman-02.webp","w":1080,"h":1350},{"src":"img/ayman-03.webp","w":1600,"h":900},{"src":"img/ayman-04.webp","w":1080,"h":1350},{"src":"img/ayman-05.webp","w":1600,"h":900},{"src":"img/ayman-06.webp","w":900,"h":1600},{"src":"img/ayman-07.webp","w":1600,"h":900},{"src":"img/ayman-08.webp","w":1600,"h":893}],"link":null,"video":null,"studio":false},{"id":"qurain","name":"ستوديو القرين","en":"Qurain Studio","year":2026,"sector":"استديو تصميم — الكويت","about":"«القرين» اسمُ الكويتِ القديم. ستُّ قطعٍ ملوّنة تتراصُّ فتكتبُ الاسمَ حرفاً حرفاً، كأنّها لبناتُ مدينةٍ تُبنى. إعادةُ تصميمٍ كاملةٌ للهوية مع القرطاسية والسوشال والموشن.","colors":["#5A4FCF","#1C1936","#F6F4EF","#FFB31A","#FF5C69","#10A6CC"],"imgs":[{"src":"img/qurain-00.webp","w":1600,"h":1073},{"src":"img/qurain-01.webp","w":1600,"h":1000},{"src":"img/qurain-02.webp","w":1600,"h":1073},{"src":"img/qurain-03.webp","w":1600,"h":1073},{"src":"img/qurain-04.webp","w":1600,"h":1073},{"src":"img/qurain-05.webp","w":1600,"h":1000},{"src":"img/qurain-06.webp","w":1600,"h":1073},{"src":"img/qurain-07.webp","w":1600,"h":1073}],"link":"../qurain/","video":null,"studio":false},{"id":"afaq","name":"أفق المستقبل","en":"Afaq Consulting","year":2026,"sector":"استشارات استراتيجية","about":"شعلةٌ ونجمةٌ تصعدان من الخطّ إلى الأفق. كحليٌّ عميقٌ وذهبٌ رمليّ لشركةٍ تقرأ مؤشراتِ الاقتصاد والسياسة في الكويت والخليج. دليلُ هوية، وقوالبُ سوشال، وبروفايلُ ستوريات.","colors":["#06162D","#CAB190","#F4EFE6","#6E737D","#7A3B3B"],"imgs":[{"src":"img/afaq-00.webp","w":1600,"h":903},{"src":"img/afaq-01.webp","w":1080,"h":1440},{"src":"img/afaq-02.webp","w":1600,"h":903},{"src":"img/afaq-03.webp","w":1080,"h":1080},{"src":"img/afaq-04.webp","w":1600,"h":903},{"src":"img/afaq-05.webp","w":900,"h":1600},{"src":"img/afaq-06.webp","w":1600,"h":903},{"src":"img/afaq-07.webp","w":1080,"h":1080},{"src":"img/afaq-08.webp","w":1600,"h":903},{"src":"img/afaq-09.webp","w":900,"h":1600}],"link":null,"video":null,"studio":false},{"id":"soroban","name":"سوروبان","en":"Soroban Economics","year":2026,"sector":"استشارات اقتصادية","about":"حرفُ «س» يصعدُ مائلاً ويعلوه خطُّ نموٍّ ينتهي بسهم: الكحليُّ للثبات والأخضرُ للنمو. دليلٌ من ثلاثين شريحة، وحزمةُ تسليمٍ كاملة، وافتتاحيةٌ متحركة.","colors":["#0B2545","#00A676","#7BD8B4","#173B63","#F5F7FA"],"imgs":[{"src":"img/soroban-00.webp","w":1600,"h":900},{"src":"img/soroban-01.webp","w":1600,"h":900},{"src":"img/soroban-02.webp","w":1080,"h":1080},{"src":"img/soroban-03.webp","w":1600,"h":900},{"src":"img/soroban-04.webp","w":1600,"h":900},{"src":"img/soroban-05.webp","w":900,"h":1600},{"src":"img/soroban-06.webp","w":1600,"h":900},{"src":"img/soroban-07.webp","w":1600,"h":900}],"link":"../Soroban.html","video":"img/soroban-intro.mp4","studio":false},{"id":"homna","name":"همنا","en":"HOMNA AI","year":2024,"sector":"ذكاء اصطناعي","about":"حرفُ الهاء يلتفُّ شريطاً واحداً بلا انقطاع، كفكرةٍ تتشكّلُ ولا تتوقف.","colors":["#7B7BEA","#0A0A0A","#EDEBE6"],"imgs":[{"src":"img/homna-00.webp","w":1500,"h":858},{"src":"img/homna-01.webp","w":1500,"h":1500},{"src":"img/homna-02.webp","w":1500,"h":844},{"src":"img/homna-03.webp","w":1500,"h":844},{"src":"img/homna-04.webp","w":1500,"h":844},{"src":"img/homna-05.webp","w":1500,"h":1500}],"link":null,"video":null,"studio":true},{"id":"wethaq","name":"وثاق","en":"Wethaq Consulting","year":2022,"sector":"استشارات أعمال","about":"علامةٌ متشابكةٌ تصنعُ من حرفين عقدةً واحدة، ونقشٌ يتكرّرُ كالنسيج.","colors":["#3EB877","#233B76","#FFFFFF"],"imgs":[{"src":"img/wethaq-00.webp","w":1500,"h":1500},{"src":"img/wethaq-01.webp","w":1500,"h":1500},{"src":"img/wethaq-02.webp","w":1500,"h":1500},{"src":"img/wethaq-03.webp","w":1500,"h":1500},{"src":"img/wethaq-04.webp","w":1500,"h":1500},{"src":"img/wethaq-05.webp","w":1500,"h":1500}],"link":null,"video":null,"studio":true},{"id":"aria","name":"آريا للموسيقى","en":"Aria School of Music","year":2021,"sector":"مدرسة موسيقى","about":"نوتةٌ موسيقيةٌ ترسمُ حرفَ A بخطوطِ المدرج.","colors":["#A3195B","#1D72B8","#149E8E","#000000"],"imgs":[{"src":"img/aria-00.webp","w":833,"h":1500},{"src":"img/aria-01.webp","w":1500,"h":1000},{"src":"img/aria-02.webp","w":1500,"h":1000},{"src":"img/aria-03.webp","w":1500,"h":1500},{"src":"img/aria-04.webp","w":1500,"h":1500},{"src":"img/aria-05.webp","w":883,"h":1500}],"link":null,"video":null,"studio":true},{"id":"blk","name":"بريتش لينكس الكويت","en":"British Links Kuwait","year":2021,"sector":"تعليم وتبادل ثقافي","about":"حرفُ B يتشكّلُ من العلَم، وخريطةٌ من النقاط تربطُ ضفّتين.","colors":["#C8102E","#1E2A5A","#FFFFFF"],"imgs":[{"src":"img/blk-00.webp","w":1000,"h":1000},{"src":"img/blk-01.webp","w":1500,"h":833},{"src":"img/blk-02.webp","w":1500,"h":844},{"src":"img/blk-03.webp","w":1065,"h":1500},{"src":"img/blk-04.webp","w":1500,"h":844},{"src":"img/blk-05.webp","w":843,"h":1500}],"link":null,"video":null,"studio":true},{"id":"elevate","name":"إليفيت سبيسز","en":"Elevate Spaces","year":2020,"sector":"عقارات","about":"درجٌ يصعدُ في ثلاثِ خطوات، فالعلامةُ نفسُها وعدٌ بالارتقاء.","colors":["#FCB43C","#8E1240","#FFFFFF"],"imgs":[{"src":"img/elevate-00.webp","w":1000,"h":1000},{"src":"img/elevate-01.webp","w":1500,"h":1000},{"src":"img/elevate-02.webp","w":1500,"h":1061},{"src":"img/elevate-03.webp","w":1500,"h":1500},{"src":"img/elevate-04.webp","w":1500,"h":1073},{"src":"img/elevate-05.webp","w":1500,"h":1500}],"link":null,"video":null,"studio":true},{"id":"simmar","name":"دار سمّار","en":"Dar Simmar","year":2019,"sector":"عطور فاخرة","about":"خيولٌ ذهبيةٌ تجري على كحليٍّ ليليّ، وخطٌّ عربيٌّ بانسيابِ العطر.","colors":["#1B1C3D","#D9B56E","#0B0B12"],"imgs":[{"src":"img/simmar-00.webp","w":1500,"h":844},{"src":"img/simmar-01.webp","w":1402,"h":1500},{"src":"img/simmar-02.webp","w":1500,"h":844},{"src":"img/simmar-03.webp","w":1500,"h":844},{"src":"img/simmar-04.webp","w":1500,"h":844},{"src":"img/simmar-05.webp","w":1032,"h":1500}],"link":null,"video":null,"studio":true},{"id":"twenty","name":"عشرين غرام","en":"Twenty Grams","year":2019,"sector":"قهوة مختصة","about":"مونوغرام «٢٠» يُبنى على النسبةِ الذهبية، ونقشٌ دافئٌ بلونِ البُنّ.","colors":["#8E1B1B","#E7A04B","#138E8E","#F4ECE6"],"imgs":[{"src":"img/twenty-00.webp","w":1500,"h":844},{"src":"img/twenty-01.webp","w":1500,"h":844},{"src":"img/twenty-02.webp","w":1500,"h":844},{"src":"img/twenty-03.webp","w":1500,"h":844},{"src":"img/twenty-04.webp","w":1500,"h":844},{"src":"img/twenty-05.webp","w":1500,"h":844}],"link":null,"video":null,"studio":true},{"id":"origin","name":"أوريجن روسترز","en":"Origin Roasters","year":2019,"sector":"محمصة قهوة","about":"خطوطُ بصمةٍ ومتاهةٌ وخرائطُ منشأ: كلُّ كيسٍ يحكي من أين جاءت الحبّة.","colors":["#3A82C8","#B85482","#E9EEF4"],"imgs":[{"src":"img/origin-00.webp","w":1500,"h":1200},{"src":"img/origin-01.webp","w":1500,"h":1200},{"src":"img/origin-02.webp","w":1500,"h":1200},{"src":"img/origin-03.webp","w":1500,"h":1000}],"link":null,"video":null,"studio":true},{"id":"candle","name":"ذا كاندل ستور","en":"The Candle Store","year":2019,"sector":"متجر شموع","about":"ختمٌ متموّجٌ كذوبانِ الشمع، وألوانُ باستيلٍ هادئة.","colors":["#A88BC9","#A9DCCB","#F6C6D4"],"imgs":[{"src":"img/candle-00.webp","w":1395,"h":1500},{"src":"img/candle-01.webp","w":1500,"h":844},{"src":"img/candle-02.webp","w":1500,"h":844},{"src":"img/candle-03.webp","w":1500,"h":1500},{"src":"img/candle-04.webp","w":1500,"h":844},{"src":"img/candle-05.webp","w":1500,"h":844}],"link":null,"video":null,"studio":true},{"id":"luxury","name":"لكجري بوتيك","en":"Luxury Boutique","year":2019,"sector":"بوتيك عطور","about":"حرفان ونقطة، ووردةٌ تتفتّحُ في الخلفية: أسودُ ووردي.","colors":["#1C1A1A","#F3CDB4","#FFFFFF"],"imgs":[{"src":"img/luxury-00.webp","w":1500,"h":1500},{"src":"img/luxury-01.webp","w":1500,"h":1061},{"src":"img/luxury-02.webp","w":1500,"h":1061},{"src":"img/luxury-03.webp","w":1500,"h":1061},{"src":"img/luxury-04.webp","w":1500,"h":1061},{"src":"img/luxury-05.webp","w":1500,"h":750}],"link":null,"video":null,"studio":true},{"id":"gng","name":"قراب آند قو","en":"Grab N Go","year":2018,"sector":"عربة برجر","about":"بقعةُ كوميكس تنفجرُ بالأصفر والأحمر، على عربةٍ ومغلّفاتٍ كاملة.","colors":["#7A0E14","#F2D21B","#F7F1E3"],"imgs":[{"src":"img/gng-00.webp","w":1500,"h":844},{"src":"img/gng-01.webp","w":1500,"h":1031},{"src":"img/gng-02.webp","w":1500,"h":844},{"src":"img/gng-03.webp","w":1500,"h":844},{"src":"img/gng-04.webp","w":1500,"h":844},{"src":"img/gng-05.webp","w":1500,"h":844}],"link":null,"video":null,"studio":true},{"id":"snatchr","name":"سناتشر","en":"SnatchR","year":2018,"sector":"توصيل أزياء","about":"حرفُ R يتحوّلُ نقشاً كاملاً بالأبيض والأسود.","colors":["#111111","#FFFFFF","#9A9A9A"],"imgs":[{"src":"img/snatchr-00.webp","w":1366,"h":282},{"src":"img/snatchr-01.webp","w":1500,"h":844},{"src":"img/snatchr-02.webp","w":1500,"h":844},{"src":"img/snatchr-03.webp","w":1500,"h":844},{"src":"img/snatchr-04.webp","w":1500,"h":844},{"src":"img/snatchr-05.webp","w":1500,"h":844}],"link":null,"video":null,"studio":true},{"id":"reyada","name":"ريادة لاب","en":"Reyada Lab","year":2018,"sector":"مختبر أفكار","about":"رأسٌ يصيرُ دورقاً تفورُ فيه الفكرة.","colors":["#0B0B0B","#F26522","#FFFFFF"],"imgs":[{"src":"img/reyada-00.webp","w":1500,"h":1500},{"src":"img/reyada-01.webp","w":1156,"h":1500},{"src":"img/reyada-02.webp","w":601,"h":1500},{"src":"img/reyada-03.webp","w":1500,"h":1500},{"src":"img/reyada-04.webp","w":1072,"h":1500},{"src":"img/reyada-05.webp","w":1500,"h":1500}],"link":null,"video":null,"studio":true},{"id":"ksp","name":"الجمعية الكويتية للتخطيط الاستراتيجي","en":"Kuwait Society for Strategic Planning","year":2017,"sector":"جمعية نفع عام","about":"خطٌّ كوفيٌّ مربّعٌ يُبنى على شبكةٍ صارمة، كأنّه مخطّطُ مدينة.","colors":["#0E2A2E","#6CC4A4","#E8524A"],"imgs":[{"src":"img/ksp-00.webp","w":1500,"h":1500},{"src":"img/ksp-01.webp","w":1500,"h":1358},{"src":"img/ksp-02.webp","w":1500,"h":1500},{"src":"img/ksp-03.webp","w":1500,"h":750},{"src":"img/ksp-04.webp","w":1500,"h":1500}],"link":null,"video":null,"studio":true},{"id":"elite","name":"إليت لاستشارات التأمين","en":"Elite Insurance","year":2017,"sector":"وساطة تأمين","about":"أبراجُ الكويت مونوغرامٌ يقفُ على الأصفر.","colors":["#F6C863","#3E3A5E","#231F20"],"imgs":[{"src":"img/elite-00.webp","w":1500,"h":1005},{"src":"img/elite-01.webp","w":1500,"h":1358},{"src":"img/elite-02.webp","w":1500,"h":1500},{"src":"img/elite-03.webp","w":1500,"h":1500},{"src":"img/elite-04.webp","w":1500,"h":1358}],"link":null,"video":null,"studio":true}];
+const AR=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+/* ألوانُ الطبقات: من رملِ السطحِ إلى طينِ العمق */
+const LAYERS={
+ 2026:{bg:'#EDE3D3',fg:'#1E1712',fg2:'#4A3D31',mut:'#7C6C5B',line:'rgba(30,23,18,.16)',card:'#F6EFE4',tile:'#E2D6C3',acc:'#B4471F',
+   line1:'أغزرُ الطبقات: أنظمةُ هويّةٍ كاملة، من الفكرةِ إلى الحركة.'},
+ 2024:{bg:'#DDCDB6',fg:'#1E1712',fg2:'#45382C',mut:'#6E5E4D',line:'rgba(30,23,18,.18)',card:'#E9DCC8',tile:'#D1BFA5',acc:'#9E3D1A',
+   line1:'حرفٌ واحدٌ يكفي ليحملَ شركةً كاملة.'},
+ 2022:{bg:'#C9B395',fg:'#1E1712',fg2:'#3F3226',mut:'#5F4F3E',line:'rgba(30,23,18,.2)',card:'#D8C5A9',tile:'#BBA383',acc:'#8A3415',
+   line1:'التشابكُ علامةُ الثقة.'},
+ 2021:{bg:'#A88C6B',fg:'#17110C',fg2:'#2E241A',mut:'#46372A',line:'rgba(23,17,12,.22)',card:'#B89C7B',tile:'#977C5D',acc:'#6E2810',
+   line1:'نوتةٌ وجسر: موسيقى وتعليم.'},
+ 2020:{bg:'#6F5640',fg:'#F4EADB',fg2:'#E2D3BE',mut:'#C9B497',line:'rgba(244,234,219,.2)',card:'#7C624A',tile:'#5E4734',acc:'#FFB089',dark:1,
+   line1:'ثلاثُ درجاتٍ نحو الأعلى.'},
+ 2019:{bg:'#4D3B2C',fg:'#F2E7D7',fg2:'#DCCBB4',mut:'#B59F84',line:'rgba(242,231,215,.16)',card:'#5A4635',tile:'#3F2F22',acc:'#FFA273',dark:1,
+   line1:'عامُ القهوةِ والعطرِ والشمع.'},
+ 2018:{bg:'#33271E',fg:'#F0E4D2',fg2:'#D3C1A8',mut:'#A48E73',line:'rgba(240,228,210,.14)',card:'#3F3127',tile:'#2A2019',acc:'#FF9566',dark:1,
+   line1:'جرأةُ البدايات: كوميكس، ونقوش، وأفكارٌ تفور.'},
+ 2017:{bg:'#1E1712',fg:'#EEE2CF',fg2:'#CDBBA2',mut:'#9A846A',line:'rgba(238,226,207,.13)',card:'#2A211A',tile:'#16110D',acc:'#FF8A5B',dark:1,
+   line1:'الطبقةُ الأولى: الكوفيُّ والأبراج.'},
+};
+const YEARS=[...new Set(DATA.map(b=>b.year))].sort((a,b)=>b-a);
+const byYear=y=>DATA.filter(b=>b.year===y);
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+/* موجةٌ عشوائيةٌ ثابتةٌ لحافّةِ كلِّ طبقة */
+function rnd(seed){return()=>{seed=(seed*16807)%2147483647;return(seed-1)/2147483646}}
+function wave(seed,w=1440,h=60,amp=18){const r=rnd(seed);let pts=[],n=7;for(let i=0;i<=n;i++)pts.push([i*w/n,h*.55+(r()-.5)*amp*2]);
+  let d=`M0 ${h} L0 ${pts[0][1]}`;for(let i=1;i<pts.length;i++){const[x0,y0]=pts[i-1],[x1,y1]=pts[i],cx=(x0+x1)/2;d+=` C${cx} ${y0} ${cx} ${y1} ${x1} ${y1}`}
+  return d+` L${w} ${h} Z`}
+const ARROW='<svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
+const swatch=(cols,tag='button')=>`<div class="sw">${cols.map(c=>tag==='button'?`<button type="button" style="background:${c}" data-hex="${c}" aria-label="نسخ ${c}"></button>`:`<span style="background:${c}"></span>`).join('')}</div>`;
+
+/* ===== بناءُ الطبقات ===== */
+const main=document.getElementById('layers');let total=0;
+YEARS.forEach((y,yi)=>{
+  const L=LAYERS[y],bs=byYear(y);
+  const s=el('section','layer'+(L.dark?' dark':''));s.id='y'+y;s.dataset.year=y;
+  for(const k of['bg','fg','fg2','mut','line','card','tile','acc'])s.style.setProperty('--'+k,L[k]);
+  s.style.setProperty('--grain',L.dark?.9:.5);
+  s.innerHTML=`<svg class="edge" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="${wave(y*7+3)}"/></svg>`;
+  const w=el('div','wrap');
+  const ago=2026-y,agoTx=ago===1?'سنة':ago===2?'سنتين':`${AR(ago)} سنوات`;
+  const depth=yi===0?'السطح — هذا العام':`الطبقة ${AR(yi+1)} — قبل ${agoTx}`;
+  w.innerHTML=`<div class="lhead"><div class="year" aria-hidden="true">${AR(y)}</div>
+    <div class="lmeta"><span class="depth">${depth}</span><h2 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">${AR(y)}</h2>
+    <p>${L.line1}</p><span class="names">${bs.map(b=>b.name).join('، ')}</span></div></div>`;
+  if(y===2026){
+    bs.forEach((b,bi)=>{
+      const c=el('article','chapter');c.id=b.id;
+      c.innerHTML=`<div class="ch-head"><div><span class="ch-num">${AR(String(bi+1).padStart(2,'0'))} / ${AR(String(bs.length).padStart(2,'0'))}</span>
+        <h3>${b.name}</h3><span class="en ltr">${b.en}</span></div>
+        <div><p class="about">${b.about}</p><div class="tags"><span class="tag">${b.sector}</span>${swatch(b.colors)}
+        ${b.link?`<a class="link-btn" href="${b.link}" target="_blank" rel="noopener">لوحةُ الهويّة التفاعلية ${ARROW}</a>`:''}</div></div></div>`;
+      const m=el('div','mosaic');
+      b.imgs.forEach((im,i)=>{
+        const cls=i===0?'tile hero-t lead-t':'tile';
+        const t=el('button',cls);t.type='button';t.style.setProperty('--i',i);t.dataset.b=b.id;t.dataset.i=i;
+        t.setAttribute('aria-label',`${b.name} — صورة ${AR(i+1)}`);
+        if(i===0&&b.video)t.innerHTML=`<video src="${b.video}" poster="${im.src}" muted playsinline loop autoplay preload="metadata"></video><span class="play">افتتاحيةٌ متحركة</span>`;
+        else t.innerHTML=`<img src="${im.src}" width="${im.w}" height="${im.h}" alt="" loading="lazy" decoding="async">`;
+        (i===0?c:m).append(t);total++});
+      c.append(m);w.append(c);
+    });
+  }else{
+    const g=el('div','grid');
+    bs.forEach((b,bi)=>{
+      const full=bs.length%2===1&&bi===0;
+      const c=el('button','card'+(full?' full':''));c.type='button';c.id=b.id;c.dataset.b=b.id;c.dataset.i=0;c.style.setProperty('--i',bi);
+      c.innerHTML=`<div class="ph">${(full?b.imgs.slice(0,3):b.imgs.slice(0,2)).map(im=>`<img src="${im.src}" alt="" loading="lazy" decoding="async">`).join('')}
+        <span class="cnt">${AR(b.imgs.length)} صور</span></div>
+        <div class="info"><h4>${b.name}</h4>${swatch(b.colors,'span')}<span class="en ltr">${b.en}</span><span class="studio">ستوديو القرين</span>
+        <span class="sec">${b.sector} — ${b.about}</span></div>`;
+      g.append(c);total+=b.imgs.length});
+    w.append(g);
+  }
+  s.append(w);main.append(s);
+});
+document.getElementById('closeEdge').setAttribute('d',wave(99));
+
+/* ===== المقطع الجيولوجي في البطل ===== */
+(function(){
+  const svg=document.getElementById('strataSvg'),W=600,H=640,top=26,ns='http://www.w3.org/2000/svg';
+  const weights=YEARS.map(y=>.9+byYear(y).length*.55),sum=weights.reduce((a,b)=>a+b,0);
+  let y0=top,h='';const bounds=[];
+  YEARS.forEach((y,i)=>{const hh=(H-top)*weights[i]/sum;bounds.push([y0,y0+hh]);y0+=hh});
+  const edge=(y,seed)=>{const r=rnd(seed);let p=[];for(let i=0;i<=6;i++)p.push([i*W/6,y+(r()-.5)*16]);return p};
+  const edges=bounds.map((b,i)=>edge(b[0],YEARS[i]*13+1));edges.push(edge(H,5));
+  const curve=(p,rev)=>{let q=rev?[...p].reverse():p,d='';for(let i=1;i<q.length;i++){const[x0,y0]=q[i-1],[x1,y1]=q[i],cx=(x0+x1)/2;d+=` C${cx} ${y0} ${cx} ${y1} ${x1} ${y1}`}return d};
+  YEARS.forEach((y,i)=>{
+    const L=LAYERS[y],a=edges[i],b=edges[i+1];
+    const g=document.createElementNS(ns,'g');g.setAttribute('class','band');g.style.transitionDelay=(i*110)+'ms';
+    const d=`M${a[0][0]} ${a[0][1]}${curve(a)} L${b[b.length-1][0]} ${b[b.length-1][1]}${curve(b,true)} Z`;
+    g.innerHTML=`<path d="${d}" fill="${L.bg}"/>`;
+    const mid=(bounds[i][0]+bounds[i][1])/2;
+    const lk=document.createElementNS(ns,'a');lk.setAttribute('href','#y'+y);
+    lk.innerHTML=`<text class="yr" x="${W-18}" y="${mid+9}" text-anchor="start" fill="${L.fg}" opacity=".85">${AR(y)}</text>`;
+    g.append(lk);
+    const r=rnd(y*31),bs=byYear(y),span=(bounds[i][1]-bounds[i][0]);
+    bs.forEach((bb,k)=>{
+      const x=40+(k+.5)*(W-200)/bs.length+(r()-.5)*30,yy=bounds[i][0]+span*(.35+r()*.35),rad=Math.max(8,Math.min(span*.28,y===2026?22:15));
+      const pg=document.createElementNS(ns,'a');pg.setAttribute('href','#'+bb.id);pg.setAttribute('class','pebble');pg.setAttribute('aria-label',bb.name);
+      pg.innerHTML=`<circle cx="${x}" cy="${yy}" r="${rad}" fill="${bb.colors[0]}"/><circle cx="${x+rad*.32}" cy="${yy-rad*.3}" r="${rad*.38}" fill="${bb.colors[1]}" stroke="none"/>`;
+      pg.dataset.name=bb.name;g.append(pg)});
+    svg.append(g);
+  });
+  const tip=document.getElementById('tip'),box=document.getElementById('strata');
+  svg.addEventListener('pointerover',e=>{const p=e.target.closest('.pebble');if(!p)return;const c=p.querySelector('circle').getBoundingClientRect(),bb=box.getBoundingClientRect();
+    tip.textContent=p.dataset.name;tip.style.right=(bb.right-c.right+c.width/2)+'px';tip.style.top=(c.top-bb.top)+'px';tip.classList.add('on')});
+  svg.addEventListener('pointerout',e=>{if(e.target.closest('.pebble'))tip.classList.remove('on')});
+  requestAnimationFrame(()=>setTimeout(()=>box.classList.add('on'),120));
+})();
+
+/* ===== العدّادات ===== */
+document.querySelector('[data-count="__NI__"]')?.setAttribute('data-count',total);
+document.querySelectorAll('[data-count]').forEach(b=>{const n=+b.dataset.count,t0=performance.now(),D=1400;
+  const f=t=>{const k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,3);b.textContent=AR(Math.round(n*e));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)});
+
+/* ===== مقياسُ العمق ===== */
+const gauge=document.getElementById('gauge');
+YEARS.forEach(y=>{const a=el('a',null,`<i></i>${AR(y)}`);a.href='#y'+y;a.dataset.y=y;gauge.append(a)});
+const secs=[...document.querySelectorAll('.layer')];
+function onScroll(){
+  const mid=innerHeight*.45;let cur=null;
+  for(const s of secs){const r=s.getBoundingClientRect();if(r.top<=mid&&r.bottom>mid)cur=s.dataset.year}
+  gauge.classList.toggle('show',scrollY>innerHeight*.6&&!!cur);
+  gauge.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.y===cur));
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* ===== الظهورُ بالتمرير ===== */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.layer,.chapter').forEach(x=>io.observe(x));
+setTimeout(()=>document.querySelectorAll('.layer,.chapter').forEach(x=>{if(x.getBoundingClientRect().top<innerHeight)x.classList.add('in')}),1500);
+
+/* ===== نسخُ الألوان ===== */
+document.addEventListener('click',e=>{const s=e.target.closest('.sw button');if(!s)return;e.stopPropagation();
+  navigator.clipboard?.writeText(s.dataset.hex);const o=s.dataset.hex;s.dataset.hex='نُسخ ✓';setTimeout(()=>s.dataset.hex=o,1100)},true);
+
+/* ===== العارض ===== */
+const lb=document.getElementById('lb'),stage=document.getElementById('lbStage'),thumbs=document.getElementById('lbThumbs');
+let LB={b:null,i:0},lastFocus=null;
+function show(i){const b=LB.b,n=b.imgs.length;LB.i=(i+n)%n;
+  stage.querySelectorAll('img,video').forEach(x=>x.remove());
+  const im=b.imgs[LB.i];let m;
+  if(LB.i===0&&b.video){m=document.createElement('video');Object.assign(m,{src:b.video,muted:true,loop:true,autoplay:true,playsInline:true,controls:true})}
+  else{m=new Image();m.src=im.src;m.alt=`${b.name} — ${AR(LB.i+1)}`}
+  stage.prepend(m);
+  document.getElementById('lbCount').textContent=`${AR(LB.i+1)} / ${AR(n)} — ${AR(b.year)}`;
+  thumbs.querySelectorAll('button').forEach((t,k)=>t.classList.toggle('on',k===LB.i));
+  thumbs.children[LB.i]?.scrollIntoView({block:'nearest',inline:'center'});
+}
+function openLB(id,i){const b=DATA.find(x=>x.id===id);LB.b=b;lastFocus=document.activeElement;
+  document.getElementById('lbTitle').textContent=b.name;
+  thumbs.innerHTML=b.imgs.map((im,k)=>`<button type="button" aria-label="صورة ${AR(k+1)}"><img src="${im.src}" alt="" loading="lazy"></button>`).join('');
+  thumbs.querySelectorAll('button').forEach((t,k)=>t.onclick=()=>show(k));
+  show(+i||0);lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('lbX').focus()}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow='';stage.querySelectorAll('video').forEach(v=>v.pause());lastFocus?.focus()}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-b]');if(t&&!e.target.closest('.sw'))openLB(t.dataset.b,t.dataset.i)});
+document.getElementById('lbX').onclick=closeLB;
+document.getElementById('lbPrev').onclick=()=>show(LB.i-1);
+document.getElementById('lbNext').onclick=()=>show(LB.i+1);
+stage.addEventListener('click',e=>{if(e.target===stage)closeLB()});
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLB();else if(e.key==='ArrowLeft')show(LB.i+1);else if(e.key==='ArrowRight')show(LB.i-1)});
+let sx=null;stage.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+stage.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(LB.i+(dx>0?1:-1));sx=null});
+</script>
+</body>
+</html>
